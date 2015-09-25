@@ -1,0 +1,17 @@
+# ZPrime High Pt Muon ID (2015)
+# 
+Muon.HighPtID.UseBool = 0
+Muon.HighPtID.BoolName = isHighPtMuon
+Muon.HighPtID.IsGlobalMuon = 1
+# Additional requirement for being a tracker muon
+Muon.HighPtID.IsTrackerMuon = 1
+Muon.HighPtID.NMatchedStations.min = 1
+Muon.HighPtID.PtRelativeError.max = 0.3
+Muon.HighPtID.Dxy.max = 0.2
+# dz cut disabled in zprime
+Muon.HighPtID.Dz.max = 1000.0 
+Muon.HighPtID.VHitsMuonSys.min = 0
+Muon.HighPtID.VHitsPixel.min = 0
+Muon.HighPtID.TrackerLayersWithMeas.min = 5
+#
+# END ZPrime High Pt Muon ID
