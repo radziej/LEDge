@@ -11,6 +11,7 @@
 #include "Tools/Tools.hh"
 #include "boost/program_options.hpp"
 #include "Main/EventSelector.hh"
+#include "Main/Systematics.hh"
 #include "Main/PDFTool.hh"
 
 // Pxl libraries
@@ -29,6 +30,7 @@ class AnalysisComposer {
                                    std::string outputDirectory,
                                    pdf::PDFInfo const &pdfInfo,
                                    EventSelector &selector,
+                                   Systematics &syst_shifter,
                                    const bool debug);
   void endAnalysis();
 
@@ -37,4 +39,4 @@ class AnalysisComposer {
   bool runOnData;
 };
 
-#endif  // LEDGE_ANALYSISCOMPOSER_HH_
+#endif // LEDGE_ANALYSISCOMPOSER_HH_

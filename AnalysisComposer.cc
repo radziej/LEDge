@@ -10,6 +10,7 @@
 #include "Tools/Tools.hh"
 #include "boost/program_options.hpp"
 #include "Main/EventSelector.hh"
+#include "Main/Systematics.hh"
 #include "Main/PDFTool.hh"
 
 // Pxl libraries
@@ -22,8 +23,11 @@
 namespace po = boost::program_options;
 
 AnalysisComposer::AnalysisComposer() :
-    m_analysisName("LEDge"),
+    m_analysisName("ledge"),
     runOnData(false) {
+}
+
+AnalysisComposer::~AnalysisComposer() {
 }
 
 po::options_description AnalysisComposer::getCmdArguments() {
@@ -44,6 +48,7 @@ pxl::AnalysisFork AnalysisComposer::addForkObjects(const Tools::MConfig &config,
                                                    std::string outputDirectory,
                                                    pdf::PDFInfo const &pdfInfo,
                                                    EventSelector &selector,
+                                                   Systematics &syst_shifter,
                                                    const bool debug) {
   // This is the function where you need to initalize your Analysis.
   // Create one or several implementations of pxl::AnalysisProcess and
